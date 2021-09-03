@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventVC" customModule="newArtist" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="121" id="KGk-i7-Jjw" customClass="EventCell" customModule="newArtist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="457" height="121"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="457" height="121"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JB4-cW-vHu">
+                        <rect key="frame" x="15" y="10" width="232" height="101"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2o-Z7-xo9">
+                                <rect key="frame" x="0.0" y="0.0" width="232" height="28.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iid-oi-KKX">
+                                <rect key="frame" x="0.0" y="36.5" width="232" height="28"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsM-3T-2dp">
+                                <rect key="frame" x="0.0" y="72.5" width="232" height="28.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="EEc-XL-tD9">
+                        <rect key="frame" x="267" y="71" width="170" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qju-EH-P9V">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
+                                <state key="normal" image="pinMap-1"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9b-IK-Vwm">
+                                <rect key="frame" x="100" y="0.0" width="70" height="40"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Go to ⏎">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeb:" destination="-1" eventType="touchUpInside" id="Jft-uV-mW8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="170" id="evw-El-xsQ"/>
+                            <constraint firstAttribute="height" constant="40" id="pev-hS-0NE"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JB4-cW-vHu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="9Gp-3U-c3D"/>
+                    <constraint firstAttribute="trailing" secondItem="EEc-XL-tD9" secondAttribute="trailing" constant="20" id="JNO-vr-ESv"/>
+                    <constraint firstItem="EEc-XL-tD9" firstAttribute="leading" secondItem="JB4-cW-vHu" secondAttribute="trailing" constant="20" id="cHN-ax-MYn"/>
+                    <constraint firstAttribute="bottom" secondItem="EEc-XL-tD9" secondAttribute="bottom" constant="10" id="dvU-fv-OUO"/>
+                    <constraint firstAttribute="bottom" secondItem="JB4-cW-vHu" secondAttribute="bottom" constant="10" id="e0U-eX-0ar"/>
+                    <constraint firstItem="JB4-cW-vHu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="gpM-Am-jWn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cityLabel" destination="rsM-3T-2dp" id="Hcj-Kv-jmq"/>
+                <outlet property="countryLabel" destination="iid-oi-KKX" id="Bcu-OT-y1g"/>
+                <outlet property="dataLabel" destination="C2o-Z7-xo9" id="QTD-HE-JC2"/>
+                <outlet property="mapButton" destination="qju-EH-P9V" id="whC-RK-2bS"/>
+            </connections>
+            <point key="canvasLocation" x="-88" y="-274"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pinMap-1" width="30" height="30"/>
+    </resources>
+</document>
