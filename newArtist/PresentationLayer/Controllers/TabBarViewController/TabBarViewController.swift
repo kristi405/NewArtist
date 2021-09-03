@@ -2,9 +2,9 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
-    let searchVC = UINavigationController(rootViewController: SearchViewController(nibName: "SearchViewController", bundle: nil))
-    let favoriteVC = UINavigationController(rootViewController: FavoriteArtist(nibName: "FavoriteArtist", bundle: nil))
-    let mapVC = MapViewController(nibName: "MapViewController", bundle: nil)
+    let searchVC = UINavigationController(rootViewController: SearchViewController(nib: R.nib.searchViewController))
+    let favoriteVC = UINavigationController(rootViewController: FavoriteArtist(nib: R.nib.favoriteArtist))
+    let mapVC = MapViewController(nib: R.nib.mapViewController)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,5 +27,4 @@ class TabBarViewController: UITabBarController {
         favoriteVC.tabBarItem.image = R.image.heart()
         mapVC.tabBarItem.image = R.image.pinMap1()
     }
-    
 }

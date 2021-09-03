@@ -4,16 +4,19 @@ import Rswift
 import Moya
 
 class SearchViewController: UIViewController {
+    // MARK: IBOutlet
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var webButton: UIButton!
     
+    // MARK: Private properties
+    
     private var artists = try? Realm().objects(FavoriteArtists.self).sorted(byKeyPath: SearchVCString.name.rawValue, ascending: true)
     private var currentArtistFavorite: CurrentArtist?
     private var onComplition: ((CurrentArtist) -> Void)?
-    private var favoriteVC = FavoriteArtist(nibName: "FavoriteArtist", bundle: nil)
+    private var favoriteVC = FavoriteArtist(nib: R.nib.favoriteArtist)
     private var text: String?
     private lazy var timer = AutosearchTimer {
         self.performSearch()
@@ -35,15 +38,8 @@ class SearchViewController: UIViewController {
         setupSearchController()
         searchArtist()
     }
-    
-    // MARK: Navigations segue
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == SearchVCString.showWebView.rawValue {
-//            guard let webVC = segue.destination as? WebViewController else {return}
-//            webVC.eventURL = currentArtistFavorite?.url ?? SearchVCString.enterTheName.rawValue
-//        }
-//    }
+
+    // MARK: IBActions
 
     @IBAction func ButtonPushed(_ sender: UIButton) {
         if !isContains() {
@@ -55,6 +51,14 @@ class SearchViewController: UIViewController {
             sender.setImage(image: R.image.whHeart(), leadingAnchor: Constants.leadingAnchorOfImage, heightAnchor: Constants.heightAnchorOfImage)
             sender.setTitle(SearchVCString.addToFavorites.rawValue.stringValue, for: .normal)
         }
+    }
+    
+    @IBAction func showWeb(_ sender: UIButton) {
+        let webVC = WebViewController(nib: R.nib.webViewController)
+        guard let currentArtist = currentArtistFavorite else {return}
+        guard let url = currentArtist.url else {return}
+        webVC.eventURL = url
+        navigationController?.pushViewController(webVC, animated: true)
     }
     
     // MARK: BusinessLogic

@@ -13,14 +13,13 @@ final class MapEvents: UIViewController {
     private var locationManager: CLLocationManager?
     private var currentLocation: CLLocation?
     private let mapManager = LocationManager()
-    private let annotationIdentifier = "annotationIdentifier"
+    private let annotationIdentifier = MapVCString.annotationIdentifier.rawValue
     private var latitude: Double?
     private var longitude: Double?
     
     // MARK: Public Properties
     
     var event: Event?
-    var didUpdateUserLocation = false
     
     // MARK: Lifecycle
     
@@ -145,7 +144,6 @@ final class MapEvents: UIViewController {
     }
 }
 
-
 // MARK: - Extensions CLLocationManager Delegate and MKMapView Delegate
 
 extension MapEvents: CLLocationManagerDelegate, MKMapViewDelegate {
@@ -156,7 +154,6 @@ extension MapEvents: CLLocationManagerDelegate, MKMapViewDelegate {
         if currentLocation == nil {
             guard let mapView = self.mapView else {return}
             mapManager.showUserLocation(mapView: mapView)
-            self.didUpdateUserLocation = true
         }
     }
     

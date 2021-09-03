@@ -30,7 +30,6 @@ final class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(events)
         self.mapView.delegate = self
         self.mapView.showsUserLocation = true
         locationManager = CLLocationManager()
@@ -54,7 +53,7 @@ final class MapViewController: UIViewController {
                 if let error = error {
                     print(error.localizedDescription)
                     return }
-
+                
                 guard let placemarks = placemarks else {return}
                 for placemark in placemarks {
                     
@@ -67,7 +66,7 @@ final class MapViewController: UIViewController {
                     guard let placemarkLocation = placemark.location else {return}
                     
                     annotations.coordinate = placemarkLocation.coordinate
-            mapView.addAnnotations([annotations])
+                    mapView.addAnnotations([annotations])
                     mapView.selectAnnotation(annotations, animated: true)
                     mapView.setCenter(mapView.centerCoordinate, animated: false)
                     mapView.showAnnotations([annotations], animated: true)

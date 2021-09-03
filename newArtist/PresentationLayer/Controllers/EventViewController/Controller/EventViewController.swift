@@ -5,33 +5,28 @@ class EventVC: UITableViewController {
     
     var events = [Event]()
     
-    // MARK: Private Properties
-    
-    private var currentEvent: Event?
-    private var indexPath: Int?
-    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Events"
+        title = EventsVCString.events.rawValue
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "eventCell")
+        tableView.register(UINib(resource: R.nib.eventCell), forCellReuseIdentifier: R.reuseIdentifier.eventCell.identifier)
         tableView.backgroundColor = R.color.backgroundColor()
     }
     
     // MARK: IBActions
     
     @IBAction func showMap(_ sender: UIButton) {
-        let mapVC = MapEvents(nibName: "MapEventViewController", bundle: nil)
+        let mapVC = MapEvents(nib: R.nib.mapViewController)
         mapVC.event = self.events[sender.tag]
         navigationController?.pushViewController(mapVC, animated: true)
     }
     
     @IBAction func showWeb(_ sender: UIButton) {
-        let webVC = WebViewController(nibName: "WebViewController", bundle: nil)
+        let webVC = WebViewController(nib: R.nib.webViewController)
         guard let event = events.first else {return}
         webVC.eventURL = event.url
         self.navigationController?.pushViewController(webVC, animated: true)
@@ -45,16 +40,18 @@ class EventVC: UITableViewController {
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowRadius = Constants.shadowRadius
     }
-
+}
     
-    // MARK: - Table view data source
+// MARK: - Extensions
 
+extension EventVC {
+    //Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.eventCell.identifier, for: indexPath) as? EventCell
         var eventsCell = EventCell()
         
         if let eventCell = cell {

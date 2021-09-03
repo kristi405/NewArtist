@@ -46,6 +46,7 @@
 		031C087426E0C3A6006C33D9 /* MapEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031C087226E0C3A6006C33D9 /* MapEventViewController.xib */; };
 		031C087A26E0ED93006C33D9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C087826E0ED92006C33D9 /* MapViewController.swift */; };
 		031C087B26E0ED93006C33D9 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 031C087926E0ED92006C33D9 /* MapViewController.xib */; };
+		031C088026E20D36006C33D9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 031C087F26E20D36006C33D9 /* .gitignore */; };
 		1D131E9CF6535C360941B6E2 /* Pods_newArtist_newArtistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E81790292DF680872289A0 /* Pods_newArtist_newArtistUITests.framework */; };
 		5166E58B9973530A1EA44634 /* Pods_newArtist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E8B4F6C767BF039DE42AC5 /* Pods_newArtist.framework */; };
 		F3DB91847FB4AA2020770EA9 /* Pods_newArtistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48B044254D8DCEB8D352D22 /* Pods_newArtistTests.framework */; };
@@ -114,6 +115,7 @@
 		031C087226E0C3A6006C33D9 /* MapEventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapEventViewController.xib; sourceTree = "<group>"; };
 		031C087826E0ED92006C33D9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		031C087926E0ED92006C33D9 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		031C087F26E20D36006C33D9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		2950A71D7EAA6B18C6D10972 /* Pods-newArtist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newArtist.debug.xcconfig"; path = "Target Support Files/Pods-newArtist/Pods-newArtist.debug.xcconfig"; sourceTree = "<group>"; };
 		3085672AEEF3B169BF97CD49 /* Pods-newArtistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newArtistTests.release.xcconfig"; path = "Target Support Files/Pods-newArtistTests/Pods-newArtistTests.release.xcconfig"; sourceTree = "<group>"; };
 		7160B1A02C71D2592E4720F7 /* Pods-newArtist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newArtist.release.xcconfig"; path = "Target Support Files/Pods-newArtist/Pods-newArtist.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,8 +184,6 @@
 				031C081226DF6917006C33D9 /* BuisnessLayer */,
 				031C080C26DF6823006C33D9 /* PresentationLayer */,
 				031C083126DF73FD006C33D9 /* Resources */,
-				031C07E626DF66A6006C33D9 /* LaunchScreen.storyboard */,
-				031C07E926DF66A6006C33D9 /* Info.plist */,
 			);
 			path = newArtist;
 			sourceTree = "<group>";
@@ -291,6 +291,9 @@
 				031C07E426DF66A6006C33D9 /* Assets.xcassets */,
 				031C083226DF7418006C33D9 /* Localization.swift */,
 				031C083C26DF7817006C33D9 /* R.generated.swift */,
+				031C087F26E20D36006C33D9 /* .gitignore */,
+				031C07E626DF66A6006C33D9 /* LaunchScreen.storyboard */,
+				031C07E926DF66A6006C33D9 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -414,8 +417,8 @@
 		031C086626E0BE70006C33D9 /* WebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				031C087E26E20AF9006C33D9 /* View */,
 				031C086726E0BE87006C33D9 /* Controller */,
-				031C086826E0BE8E006C33D9 /* Cell */,
 			);
 			path = WebViewController;
 			sourceTree = "<group>";
@@ -424,16 +427,8 @@
 			isa = PBXGroup;
 			children = (
 				031C086926E0BEAB006C33D9 /* WebViewController.swift */,
-				031C086A26E0BEAB006C33D9 /* WebViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		031C086826E0BE8E006C33D9 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		031C086D26E0C346006C33D9 /* MapEventViewController */ = {
@@ -474,7 +469,6 @@
 			isa = PBXGroup;
 			children = (
 				031C087826E0ED92006C33D9 /* MapViewController.swift */,
-				031C087926E0ED92006C33D9 /* MapViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -482,6 +476,15 @@
 		031C087726E0ED6D006C33D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				031C087926E0ED92006C33D9 /* MapViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		031C087E26E20AF9006C33D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				031C086A26E0BEAB006C33D9 /* WebViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				031C086126E0B085006C33D9 /* EventViewController.xib in Resources */,
 				031C086C26E0BEAB006C33D9 /* WebViewController.xib in Resources */,
 				031C087B26E0ED93006C33D9 /* MapViewController.xib in Resources */,
+				031C088026E20D36006C33D9 /* .gitignore in Resources */,
 				031C087426E0C3A6006C33D9 /* MapEventViewController.xib in Resources */,
 				031C084E26DF83A8006C33D9 /* FavoriteArtist.xib in Resources */,
 				031C07E526DF66A6006C33D9 /* Assets.xcassets in Resources */,
@@ -972,7 +976,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CFTJPS6ZYY;
-				INFOPLIST_FILE = newArtist/Info.plist;
+				INFOPLIST_FILE = newArtist/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -980,7 +984,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Kristina.newArtist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -992,7 +996,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CFTJPS6ZYY;
-				INFOPLIST_FILE = newArtist/Info.plist;
+				INFOPLIST_FILE = newArtist/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1000,7 +1004,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Kristina.newArtist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

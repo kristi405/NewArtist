@@ -168,6 +168,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.file` struct is generated, and contains static references to 1 files.
+  struct file {
+    /// Resource file `.gitignore`.
+    static let gitignore = Rswift.FileResource(bundle: R.hostingBundle, name: ".gitignore", pathExtension: "")
+
+    /// `bundle.url(forResource: ".gitignore", withExtension: "")`
+    static func gitignore(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gitignore
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.image` struct is generated, and contains static references to 10 images.
   struct image {
     /// Image `cancel`.

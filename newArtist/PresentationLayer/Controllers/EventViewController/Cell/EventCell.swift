@@ -1,17 +1,14 @@
 import UIKit
 
 class EventCell: UITableViewCell {
+    // MARK: IBOutlets
     
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    
     @IBOutlet weak var mapButton: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    // MARK: Configure Cell
 
     func configureCell(event: Event) {
         dataLabel.text = event.datetime

@@ -38,9 +38,9 @@ final class FavoriteArtist: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "My favorite artists"
+        title = FaviritsVCString.myFavoriteArtist.rawValue.stringValue
         navigationController?.navigationBar.prefersLargeTitles = true
-        myCollectionView.register(UINib(nibName:"FavoriteCell", bundle: nil), forCellWithReuseIdentifier: "favoriteCell")
+        myCollectionView.register(UINib(resource: R.nib.favoriteCell), forCellWithReuseIdentifier: R.reuseIdentifier.favoriteCell.identifier)
         myCollectionView.backgroundColor = R.color.color()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.tintColor = .black
@@ -106,7 +106,7 @@ final class FavoriteArtist: UIViewController, UICollectionViewDelegate, UICollec
         
         artistService.getEvents(artist: name, date: date) { events in
             self.events = events
-            let eventVC = EventVC(nibName: "EventViewController", bundle: nil)
+            let eventVC = EventVC(nib: R.nib.eventViewController)
             eventVC.events = events
             self.navigationController?.pushViewController(eventVC, animated: true)
             self.sentEvents(currentEvents: events)
@@ -179,7 +179,7 @@ extension FavoriteArtist {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoriteCell", for: indexPath) as? FavoriteCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.favoriteCell.identifier, for: indexPath) as? FavoriteCell
         var favoriteCell = FavoriteCell()
         
         if let favoriteArtistCell = cell {

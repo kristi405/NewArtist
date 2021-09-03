@@ -5,12 +5,11 @@ enum SearchVCString: String, CodingKey {
     case addToFavorites = "Add_To_Favorites"
     case removeFromFavorites = "Remove_From_Favorites"
     case name
-    case showWebView
 }
 
 enum FaviritsVCString: String, CodingKey {
+    case myFavoriteArtist = "My_favorite_artist"
     case attributedTitle
-    case showEvent
     case all
     case past
     case upcoming
@@ -22,8 +21,7 @@ enum FaviritsVCString: String, CodingKey {
 }
 
 enum EventsVCString: String, CodingKey {
-    case showMap
-    case showWeb
+    case events = "Events"
 }
 
 enum  WebVCString: String, CodingKey {
